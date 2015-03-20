@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+	<title>Chapter2</title>
+	<script type="text/javascript" src='./bower_components/angularjs/angular.min.js'>
+	</script>
+	<script type="text/javascript" src='index.js'></script>
+	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body ng-controller="ToDoCtrl">
+	<div class="page-header col-md-12 col-xs-12">
+		<h1>{{todos.user}} TO DO List <span ng-hide="hideTodos()" class="label label-default" ng-class="warningLevel()">{{unfinishedTodos()}}<span></h1>
+	</div>
+
+	<div class="panel">
+		<div class="input-group">
+			<input class="form-control" ng-model='newTodo'>
+			<span class="input-group-btn">
+				<button class="btn btn-default" ng-click="addNewTodo(newTodo)">Add</button>
+			</span>
+		</div>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Description</th>
+					<th>Done</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="todo in todos.items | checkedItems:showComplete">
+					<td>{{todo.action}}</td>
+					<td><input type="checkbox" ng-model="todo.done"/></td>
+					<td>{{todo.done}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="checkbox-inline">
+			<label><input type='checkbox' ng-model="showComplete">Show All</label>
+		</div>
+	</div>
+</body>
+</html>

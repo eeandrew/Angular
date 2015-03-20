@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="sportsStore">
+<head>
+<title>Sports Store</title>
+<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="./constants/constants.js"></script>
+<script type="text/javascript" src="./controllers/sportsStore.js"></script>
+<script type="text/javascript" src="./filters/categoryFilter.js"></script>
+<script type="text/javascript" src="./controllers/productListCtrl.js"></script>
+<script type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="sportsStoreCtrl">
+ <div class="navbar navbar-inverse">
+ 	<a href="" class="navbar-brand">SPORTS STORE</a>
+ </div>
+
+ <div class="alert alert-danger" ng-show="data.error">
+	 	Error {{data.error.status}}
+	 	<a href="/app.html">Click here to reload</a>
+ </div>
+
+ <ng-include src="'views/productList.html'"></ng-include>
+ 
+</body>
+</html>
