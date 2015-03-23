@@ -1,0 +1,21 @@
+{
+  "name": "Chapter3",
+  "version": "0.0.0",
+  "homepage": "https://github.com/eeandrew/Angular",
+  "authors": [
+    "andrew <zhou_l@worksap.co.jp>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.15",
+    "bootstrap": "~3.3.4"
+  }
+}
