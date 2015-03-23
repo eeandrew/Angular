@@ -1,1 +1,1 @@
-var sportsStore = angular.module('sportsStore',[]);
+var sportsStore = angular.module('sportsStore',["cart","ngRoute"]);
