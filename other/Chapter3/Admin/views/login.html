@@ -1,0 +1,30 @@
+
+
+<div ng-controller="authCtrl" class="well">
+	<div ng-show="authenticateError" class="alert alert-danger">
+		Auth Error : {{authenticateError}}
+	</div>
+
+	<form name="authForm" novalidation>
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" class="form-control" id="username" name="username" 
+			ng-model="data.auth.username" required>
+			<span ng-show="authForm.username.$error.required">Username is required</span>
+		</div>
+
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" name="password" 
+			ng-model="data.auth.password" required>
+			<span ng-show="authForm.password.$error.required">Username is required</span>
+		</div>
+	</form>
+
+	<div class="text-center">
+		<button type="button" class="btn btn-primary" ng-disabled="authForm.$invalid"
+			ng-click="authenticate(data.auth.username,data.auth.password)">
+			Login
+		</button>
+	</div>
+</div>

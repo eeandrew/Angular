@@ -1,1 +1,9 @@
-<div>thankYou</div>
+<div class="alert alert-danger" ng-show="data.orderError">
+	Error {{data.orderError}}
+	<a href="#/placeorder" class="alert-link">Try Again</a>
+</div>
+
+<div class="well" ng-hide="data.orderError">
+	<h2>Thanks</h2>
+	Your order Id {{data.orderId}}
+</div>

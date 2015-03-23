@@ -1,3 +1,68 @@
-<div>
-Place Order
-</div>
+<style type="text/css">
+	.ng-invalid {
+		background-color: lightpink;
+	}
+	.ng-valid {
+		background-color: lightgreen;
+	}
+	span.error {
+		color: red;
+		font-weight: bold;
+	}
+</style>
+
+<h2>Check Out</h2>
+<form name="shippingForm" novalidate>
+	<div class="well">
+		<h3>Ship to</h3>
+		<div class="form-group">
+			<label for="customer_name">Name</label>
+			<input type="text" ng-model="data.shipping.name" name="name" class="form-control" id="customer_name" placeholder="Your Name" required>
+			<span class="error" ng-show="shippingForm.name.$error.required">
+				Please Enter A Name
+			</span>
+		</div>
+
+		<div class="form-group">
+			<label for="customer_address">Street</label>
+			<input type="text" name="street" ng-model="data.shipping.street" class="form-control" id="customer_address" placeholder="Your Address" required>
+			<span class="error" ng-show="shippingForm.street.$error.required">
+				Please Enter A Street
+			</span>
+		</div>
+
+		<div class="form-group">
+			<lable for="customer_city">City</label>
+			<input type="text" name="city" id="customer_city" ng-model="data.shipping.city" 
+			class="form-control" required>
+			<span class="error" ng-show="shippingForm.city.$error.required">
+				Please Enter A City
+			</span>
+		</div>
+
+		<div class="form-group">
+			<lable for="customer_state">State</label>
+			<input type="text" name="state" id="customer_state" ng-model="data.shipping.state" 
+			class="form-control" required>
+			<span class="error" ng-show="shippingForm.state.$error.required">
+				Please Enter A State
+			</span>
+		</div>
+
+		<h3>Options</h3>
+		<div class="checkbox">
+			<label>
+				<input name="giftwrap" type="checkbox" ng-model="data.shipping.giftwrap">
+				Gift Wrap these Item
+			</label>
+		</div>
+
+
+		<div class="text-center">
+			<button class="btn btn-primary" ng-disabled="shippingForm.$invalid" 
+			ng-click="sendOrder(data.shipping)">
+				Confirm Order
+			</button>
+		</div>
+	</div>
+</form>

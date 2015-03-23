@@ -1,0 +1,1 @@
+angular.module('adminMain',["ngRoute"])
